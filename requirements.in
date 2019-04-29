@@ -1,0 +1,5 @@
+django==2.2
+django-csp
+django-webpack-loader
+pip-tools
+django-vanilla-views
