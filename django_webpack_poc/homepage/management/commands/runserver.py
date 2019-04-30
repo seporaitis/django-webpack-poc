@@ -22,7 +22,7 @@ def webpack():
         ['npx', 'webpack', '--config', 'webpack.config.js', '--watch', '--progress'],
         cwd=os.path.join(
             os.path.dirname(__file__),
-            '../../static_source/',
+            '../../../../static_source/',
         ),
         stdin=None,
         stdout=sys.stdout,

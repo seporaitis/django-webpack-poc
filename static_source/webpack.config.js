@@ -22,7 +22,7 @@ module.exports = (env) => {
       },
 
       output: {
-        path: path.resolve('../static/'),
+        path: path.resolve('../django_webpack_poc/homepage/static/'),
         filename: "[name].js",
       },
 
@@ -55,7 +55,7 @@ module.exports = (env) => {
       },
 
       output: {
-        path: path.resolve('../static/'),
+        path: path.resolve('../django_webpack_poc/homepage/static/'),
         filename: '[name].css',
       },
 

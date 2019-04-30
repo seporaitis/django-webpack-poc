@@ -15,7 +15,7 @@ Requirements:
 Setup:
 
 1. `pip install -r requirements.txt`
-2. `(cd django_webpack_poc/homepage/static_source; npm install)`
+2. `(cd static_source; npm install)`
 3. `python manage.py migrate`
 
 Run development version:

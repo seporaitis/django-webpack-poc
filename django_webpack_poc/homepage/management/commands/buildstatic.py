@@ -11,7 +11,7 @@ class Command(BaseCommand):
             ['npx', 'webpack', '--config', 'webpack.config.js', '--progress', '--env.production'],
             cwd=os.path.join(
                 os.path.dirname(__file__),
-                '../../static_source',
+                '../../../../static_source',
             ),
             stdin=None,
             stdout=sys.stdout,
