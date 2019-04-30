@@ -9,10 +9,25 @@
 
     <title>django-webpack-poc</title>
 
+    <link rel="stylesheet" href="{% static 'base.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'font-awesome.min.css' %}">
+
     {% block head_extra %}{% endblock %}
   </head>
 
   <body>
-    {% block body %}{% endblock %}
+    <nav class="navbar navbar-dark bg-dark flex-md-nowrap d-print-none">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0"  href="/">
+        <i class="fas fa-fw fa-bookmark"></i> django-webpack-poc
+      </a>
+    </nav>
+    <div class="container-fluid vh-md-100 d-flex flex-column d-print-block">
+      <div class="row flex-grow-1" >
+        <main class="col px-4 py-3">
+          {% block body %}{% endblock %}
+        </main>
+      </div>
+    </div>
   </body>
 </html>

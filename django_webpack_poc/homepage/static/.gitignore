@@ -1,2 +1,7 @@
 *.js
+*.css
+*.woff*
+*.eot
+*.svg
+*.ttf
 !.gitignore

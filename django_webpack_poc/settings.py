@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'csp.middleware.CSPMiddleware',
 ]
 
 ROOT_URLCONF = 'django_webpack_poc.urls'
@@ -131,3 +132,4 @@ WHITENOISE_USE_FINDERS = True
 CSP_DEFAULT_SRC = ["'self'"]
 CSP_FRAME_SRC = ["'self'"]
 CSP_FRAME_ANCESTORS = ["'self'"]
+CSP_FONT_SRC = ["'self'"]

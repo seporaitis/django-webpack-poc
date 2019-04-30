@@ -1,3 +1,4 @@
+import atexit
 import os
 import subprocess
 import sys
@@ -7,6 +8,12 @@ from django.conf import settings
 from django.contrib.staticfiles.management.commands.runserver import (
     Command as RunserverCommand,
 )
+
+
+def cleanup(process):
+    if process.poll() is None:
+        print('Killing webpack...')
+        process.kill()
 
 
 @contextmanager
@@ -22,6 +29,8 @@ def webpack():
         stderr=sys.stderr,
     )
 
+    atexit.register(cleanup, webpack_process)
+
     yield
 
     webpack_process.kill()
@@ -35,10 +44,10 @@ def nullcontext():
 
 class Command(RunserverCommand):
 
-    def handle(self, *args, **kwargs):
+    def inner_run(self, *args, **options):
         ctx = nullcontext
         if settings.DEBUG:
             ctx = webpack
 
         with ctx():
-            super().handle(*args, **kwargs)
+            super().inner_run(*args, **options)
