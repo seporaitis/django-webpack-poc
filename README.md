@@ -27,5 +27,7 @@ python manage.py runserver 0:8000
 Run "production" version:
 
 ```
+rm -rf django_webpack_poc/homepage/static/*
+python manage.py buildstatic
 PRODUCTION=1 python manage.py runserver 0:8000
 ```
