@@ -3,3 +3,4 @@ django-csp
 django-webpack-loader
 pip-tools
 django-vanilla-views
+whitenoise

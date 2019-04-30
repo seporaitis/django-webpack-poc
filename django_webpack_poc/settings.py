@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-w1qw+ovq_0cbvvqmo^s=nr@8jz86pn#qgn=kig$#q7$0sk&^_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = not bool(os.environ.get('PRODUCTION'))
 
 ALLOWED_HOSTS = ['localhost']
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -119,3 +120,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# whitenoise
+
+# Avoid needing 'collectstatic' run on production by loading from app dirs
+WHITENOISE_USE_FINDERS = True
+
+# django-csp
+
+CSP_DEFAULT_SRC = ["'self'"]
+CSP_FRAME_SRC = ["'self'"]
+CSP_FRAME_ANCESTORS = ["'self'"]
