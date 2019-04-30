@@ -19,7 +19,7 @@ def cleanup(process):
 @contextmanager
 def webpack():
     webpack_process = subprocess.Popen(
-        ['npx', 'webpack', '--config', 'webpack.config.js', '--watch'],
+        ['npx', 'webpack', '--config', 'webpack.config.js', '--watch', '--progress'],
         cwd=os.path.join(
             os.path.dirname(__file__),
             '../../static_source/',
