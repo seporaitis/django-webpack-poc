@@ -1,13 +1,10 @@
-var path = require('path');
-var webpack = require('webpack');
-var BundleTracker = require('webpack-bundle-tracker');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const BundleTracker = require('webpack-bundle-tracker');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
-module.exports = (env) => {
-  if (env == undefined) {
-    env = {production: false};
-  }
+module.exports = (env = {production: false}) => {
   return [
     {
       context: __dirname,
@@ -60,7 +57,7 @@ module.exports = (env) => {
       },
 
       plugins: [
-        new ExtractTextPlugin('[name].min.css')
+        new ExtractTextPlugin('[name].min.css'),
       ],
 
       module: {
