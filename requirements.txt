@@ -8,7 +8,7 @@ click==7.0                # via pip-tools
 django-csp==3.5
 django-vanilla-views==1.0.6
 django-webpack-loader==0.6.0
-django==2.2.3
+django==2.2.8
 pip-tools==4.0.0
 pytz==2019.1              # via django
 six==1.12.0               # via pip-tools
