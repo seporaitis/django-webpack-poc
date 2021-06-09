@@ -4,13 +4,25 @@
 #
 #    pip-compile --output-file=requirements.txt requirements.in
 #
-click==7.0                # via pip-tools
+click==7.0
+    # via pip-tools
 django-csp==3.5
+    # via -r requirements.in
 django-vanilla-views==1.0.6
+    # via -r requirements.in
 django-webpack-loader==0.6.0
-django==2.2.3
+    # via -r requirements.in
+django==2.2.22
+    # via
+    #   -r requirements.in
+    #   django-csp
 pip-tools==4.0.0
-pytz==2019.1              # via django
-six==1.12.0               # via pip-tools
-sqlparse==0.3.0           # via django
+    # via -r requirements.in
+pytz==2019.1
+    # via django
+six==1.12.0
+    # via pip-tools
+sqlparse==0.3.0
+    # via django
 whitenoise==4.1.3
+    # via -r requirements.in
